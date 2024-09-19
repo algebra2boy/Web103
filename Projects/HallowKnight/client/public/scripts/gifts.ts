@@ -20,9 +20,9 @@ const renderGifts = async () => {
             name.textContent = gift.name
             bottomContainer.appendChild(name)
 
-            const pricePoint = document.createElement('p')
-            pricePoint.textContent = 'Price: ' + gift.pricePoint
-            bottomContainer.appendChild(pricePoint)
+            const healthPoint = document.createElement('p')
+            healthPoint.textContent = 'healthPoint: ' + gift.healthPoint
+            bottomContainer.appendChild(healthPoint)
 
             const audience = document.createElement('p')
             audience.textContent = 'Great For: ' + gift.audience

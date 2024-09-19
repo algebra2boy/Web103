@@ -1,105 +1,53 @@
 type Gift = {
     id: number,
     name: string,
-    pricePoint: string,
+    healthPoint: number,
     audience: string,
     image: string,
     description: string,
-    submittedBy: string,
-    submittedOn: string
 }
 
 const giftData: Gift[] = [
     {
         "id": 1,
-        "name": "Disco Ball Candle",
-        "pricePoint": "$",
-        "audience": "Candle Lovers",
-        "image": "https://tinyurl.com/39xc9h6y",
+        "name": "Broken Vessel",
+        "healthPoint": 100,
+        "audience": "Beginner",
+        "image": "http://pa1.narvii.com/6609/84a4a9203980912269721c8ff403a7b1314540d9_00.gif",
         "description": "A party in a candle",
-        "submittedBy": "Sasha",
-        "submittedOn": "2022-09-04T14:48:00"
     },
     {
         "id": 2,
-        "name": "Lego Flower Bouquet Kit",
-        "pricePoint": "$",
-        "audience": "Green Thumbs",
-        "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ-ZTxkyl3oI5vzrcHAPTXbZBFb9xqdVt9AkLsf7cdDjGHHL75xyltskhHAgxX5gqESfpui63pKReRmGg674xoH_aanaM4v2l4_HYduulK_Am7b819yv_aSwHxXK1YRvx2GGcSklG9EdZU&usqp=CAc",
+        "name": "Crystal Guardian",
+        "healthPoint": 299,
+        "audience": "Intermediate",
+        "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4b368430-8d57-492e-bc0b-360ef75b19bd/df7btpo-b405685c-1f21-45ae-ae2d-ec2ccf9917ed.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRiMzY4NDMwLThkNTctNDkyZS1iYzBiLTM2MGVmNzViMTliZFwvZGY3YnRwby1iNDA1Njg1Yy0xZjIxLTQ1YWUtYWUyZC1lYzJjY2Y5OTE3ZWQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.v0Ld-ubRZSjy9vAbVd0F2mvUm_ObG46xEsWW25NSiDM",
         "description": "A gift and fun activity to do together",
-        "submittedBy": "Isabel",
-        "submittedOn": "2023-02-14T12:32:00"
     },
     {
         "id": 3,
-        "name": "Nintendo Switch Lite",
-        "pricePoint": "$$",
-        "audience": "Gamers",
-        "image": "https://tinyurl.com/2cdfe59x",
+        "name": "False Knight",
+        "healthPoint": 300,
+        "audience": "Advanced",
+        "image": "https://flipanim.com/gif/x/4/X4Khfx0b.gif",
         "description": "A gift for gamers on-the-go",
-        "submittedBy": "Mario",
-        "submittedOn": "2022-09-13T11:01:00"
     },
     {
         "id": 4,
-        "name": "Nike Panda Dunks",
-        "pricePoint": "$$",
-        "audience": "Sneakerheads",
-        "image": "https://tinyurl.com/y9bzv8xd",
+        "name": "Hallow Knight",
+        "healthPoint": 999,
+        "audience": "Advanced",
+        "image": "https://media.tenor.com/HdBYk1CMyE4AAAAd/hollow-knight.gif",
         "description": "A fan-favorite black and white color-blocking sneaker",
-        "submittedBy": "Jason",
-        "submittedOn": "2023-03-10T05:23:00"
     },
     {
         "id": 5,
-        "name": "Razer Kitty Headset",
-        "pricePoint": "$$",
-        "audience": "Gamers",
-        "image": "https://www.courts.com/media/catalog/product/k/d/kd1049_00_razer_rz04-04510200-r3u1_kraken_kitty_edition_v2_pro_quartz_wired_rgb.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=1000&width=1000&canvas=1000:1000",
+        "name": "Hornet Protector",
+        "healthPoint": 1000,
+        "audience": "Advanced",
+        "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7a2d7d4d-0115-4ac6-8324-c15f9174c7d2/dda0aas-4df1cb55-fee4-4fbf-a8cb-dc2494df7544.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdhMmQ3ZDRkLTAxMTUtNGFjNi04MzI0LWMxNWY5MTc0YzdkMlwvZGRhMGFhcy00ZGYxY2I1NS1mZWU0LTRmYmYtYThjYi1kYzI0OTRkZjc1NDQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.cqBK9ZSric91qct31u23_5mJjwwVI-CqxM5R4TreqwQ",
         "description": "Create the purrfect gaming look with your own killer kitty style",
-        "submittedBy": "Pixie",
-        "submittedOn": "2011-10-10T14:48:00"
     },
-    {
-        "id": 6,
-        "name": "Nellsi Sunset Lamp Projection",
-        "pricePoint": "$",
-        "audience": "Sungazers",
-        "image": "https://tinyurl.com/y76zsc37",
-        "description": "Sunshine any time, any place",
-        "submittedBy": "Melody",
-        "submittedOn": "2011-10-10T14:48:00"
-    },
-    {
-        "id": 7,
-        "name": "Frigidaire Retro Mini Fridge",
-        "pricePoint": "$",
-        "audience": "Foodies",
-        "image": "https://tinyurl.com/dzyhec8a",
-        "description": "A retro way of keeping things cool",
-        "submittedBy": "Grover",
-        "submittedOn": "2023-01-01T14:48:00"
-    },
-    {
-        "id": 8,
-        "name": "Crosley Discover Turntable",
-        "pricePoint": "$",
-        "audience": "Music Lovers",
-        "image": "https://tinyurl.com/4vycxmkm",
-        "description": "A portable turntable that is ready to play right out of the box",
-        "submittedBy": "Marvin",
-        "submittedOn": "2023-04-01T07:02:00"
-    },
-    {
-        "id": 9,
-        "name": "Brandon Blackwood Parker Bag",
-        "pricePoint": "$$",
-        "audience": "Fashionistas",
-        "image": "https://tinyurl.com/2n6pszw7",
-        "description": "A perfect pop of color",
-        "submittedBy": "Brandon",
-        "submittedOn": "2023-01-10T14:48:00"
-    }
 ]
 
 export default giftData;
