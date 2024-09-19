@@ -15,7 +15,7 @@ const renderGift = async () => {
         document.title = `UnEarthed - ${gift.name}`
     } else {
         const message = document.createElement('h2')
-        message.textContent = 'No Gifts Available 😞'
+        message.textContent = 'No Knight Available'
         giftContent?.appendChild(message)
     }
 };

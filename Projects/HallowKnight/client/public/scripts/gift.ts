@@ -9,15 +9,13 @@ const renderGift = async () => {
     if (gift) {
         document.getElementById('image').src = gift.image
         document.getElementById('name').textContent = gift.name
-        document.getElementById('submittedBy').textContent = 'Submitted by: ' + gift.submittedBy
-        document.getElementById('submittedOn').textContent = 'Submitted On: ' + gift.submittedOn
-        document.getElementById('healthPoint').textContent = 'Price: ' + gift.pricePoint
+        document.getElementById('healthPoint').textContent = 'HealthPoint: ' + gift.healthPoint
         document.getElementById('audience').textContent = 'Great For: ' + gift.audience
         document.getElementById('description').textContent = gift.description
         document.title = `Hallow Knight - ${gift.name}`
     } else {
         const message = document.createElement('h2')
-        message.textContent = 'No Gifts Available 😞'
+        message.textContent = 'No Knight Available'
         giftContent?.appendChild(message)
     }
 };
