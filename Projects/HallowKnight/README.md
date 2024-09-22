@@ -1,4 +1,4 @@
-# WEB103 Project 1 - *Hallow Knight
+# WEB103 Project 1 - *Hallow Knight*
 
 Submitted by: Yongye Tan
 
