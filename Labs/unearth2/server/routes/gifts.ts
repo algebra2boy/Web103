@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import giftData from '../data/gifts.js';
+import GiftsController from '../controllers/gifts.js';
 
 // The fileURLToPath function is a utility function that converts a file URL to a file path. It takes a single argument, 
 // which is a file URL in the form of a string, and returns a file path in the form of a string. 
@@ -11,8 +11,9 @@ const __dirname = path.dirname(__filename); // get the directory name of the cur
 
 const router = express.Router();
 
-router.get('/', (_req, res) => {
-    res.status(200).json(giftData);
+router.get('/', GiftsController.getGifts);
+router.get('/hello/abc', (_req, res) => {
+    return res.status(200).send('Hello, World!');
 });
 
 router.get('/:giftId', (_req, res) => {

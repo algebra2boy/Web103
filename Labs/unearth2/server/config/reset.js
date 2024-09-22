@@ -20,7 +20,6 @@ const createTableQuery = `
 const createGiftsTable = async () => {
     try {
         const res = await pool.query(createTableQuery);
-        console.log('🎉 gifts table created successfully');
     } catch (err) {
         console.error('⚠️ error creating gifts table', err);
     }
@@ -56,3 +55,4 @@ const seedGiftsTable = async () => {
 }
 
 seedGiftsTable();
+console.log('🌱 seeding gifts table...');
