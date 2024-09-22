@@ -1,5 +1,5 @@
 const renderGifts = async () => {
-    const response = await fetch('/gifts');
+    const response = await fetch('/knifts');
     const data = await response.json();
     const mainContent = document.getElementById('main-content')
 
@@ -31,7 +31,7 @@ const renderGifts = async () => {
             const link = document.createElement('a')
             link.textContent = 'Read More >'
             link.setAttribute('role', 'button')
-            link.href = `/gifts/${gift.id}`
+            link.href = `/knifts/${gift.id}`
             bottomContainer.appendChild(link)
 
             card.appendChild(topContainer)

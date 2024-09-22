@@ -7,7 +7,7 @@ app.use('/scripts', express.static('./public/scripts'));
 
 import giftsRouter from './routes/gifts.js';
 
-app.use('/gifts', giftsRouter);
+app.use('/knifts', giftsRouter);
 
 const PORT = process.env.PORT || 3001;
 
