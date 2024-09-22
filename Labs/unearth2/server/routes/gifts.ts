@@ -12,9 +12,6 @@ const __dirname = path.dirname(__filename); // get the directory name of the cur
 const router = express.Router();
 
 router.get('/', GiftsController.getGifts);
-router.get('/hello/abc', (_req, res) => {
-    return res.status(200).send('Hello, World!');
-});
 
 router.get('/:giftId', (_req, res) => {
     res.status(200).sendFile(path.resolve(__dirname, '../public/gift.html'));
