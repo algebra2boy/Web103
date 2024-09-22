@@ -4,7 +4,8 @@
   "main": "server.ts",
   "type": "module",
   "scripts": {
-    "start": "nodemon server.ts"
+    "start": "npm run reset && nodemon --require dotenv/config server.ts",
+    "reset": "cd config && node --require dotenv/config reset.js"
   },
   "keywords": [],
   "author": "",

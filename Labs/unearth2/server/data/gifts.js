@@ -1,15 +1,15 @@
-type Gift = {
-    id: number,
-    name: string,
-    pricePoint: string,
-    audience: string,
-    image: string,
-    description: string,
-    submittedBy: string,
-    submittedOn: string
-}
+// type Gift = {
+//     id: number,
+//     name: string,
+//     pricePoint: string,
+//     audience: string,
+//     image: string,
+//     description: string,
+//     submittedBy: string,
+//     submittedOn: string
+// }
 
-const giftData: Gift[] = [
+const giftData = [
     {
         "id": 1,
         "name": "Disco Ball Candle",

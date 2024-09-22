@@ -1,6 +1,6 @@
-import pg, { PoolConfig } from 'pg';
+import pg from 'pg';
 
-const config: PoolConfig = {
+const config = {
     user: process.env.PGUSER,
     password: process.env.PGPASSWORD,
     host: process.env.PGHOST,
