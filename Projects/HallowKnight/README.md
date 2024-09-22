@@ -1,10 +1,10 @@
-# WEB103 Project 1 - *Hallow Knight
+# WEB103 Project 1 - *Hallow Knight*
 
 Submitted by: Yongye Tan
 
 About this web app: A simple Hallow Knight app
 
-Time spent: 2 hours
+Time spent: 1 hour
 
 ## Required Features
 
@@ -26,6 +26,9 @@ The following **optional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
+
+
+https://github.com/user-attachments/assets/0c0f2480-bff7-4510-b801-00922f7fd54e
 
 
 ## Notes
