@@ -20,6 +20,7 @@ The following **required** functionality is completed:
 
 Here's a walkthrough of implemented required features:
 
+https://github.com/user-attachments/assets/382da7d1-cc0f-4b8f-b4d3-d20c0bf330a1
 
 ## Notes
 
