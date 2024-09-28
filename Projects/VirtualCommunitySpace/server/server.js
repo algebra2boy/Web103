@@ -2,8 +2,10 @@ import express from 'express'
 import path from 'path'
 import favicon from 'serve-favicon'
 import dotenv from 'dotenv'
+import cors from 'cors';
 
 // import the router from your routes file
+import EventRouter from './routes/event.js'
 
 
 dotenv.config()
@@ -11,6 +13,8 @@ dotenv.config()
 const PORT = process.env.PORT || 3000
 
 const app = express()
+
+app.use(cors());
 
 app.use(express.json())
 
@@ -23,6 +27,7 @@ else if (process.env.NODE_ENV === 'production') {
 }
 
 // specify the api path for the server to use
+app.use('/api', EventRouter);
 
 
 if (process.env.NODE_ENV === 'production') {
