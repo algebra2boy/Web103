@@ -1,4 +1,4 @@
-const getAllEvents = (req, res) => {
+const getAllLocation = (req, res) => {
     try {
         res.status(200).json([
             { name: "The Echo Lounge & Music Hall" },
@@ -15,5 +15,5 @@ const getAllEvents = (req, res) => {
 
 
 export default {
-    getAllEvents
+    getAllLocation
 }

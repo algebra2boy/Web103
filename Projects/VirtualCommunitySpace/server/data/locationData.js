@@ -1,4 +1,4 @@
-const locations = [
+export const locations = [
     {
         id: 1,
         name: "The Echo Lounge & Music Hall",
