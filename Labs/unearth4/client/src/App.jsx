@@ -57,6 +57,9 @@ const App = () => {
             <Link to="/">
               <button className="homeBtn">Home</button>
             </Link>
+            <Link to="/new">
+              <button className="addBtn">+ Add Gift</button>
+            </Link>
           </div>
         </div>
       </header>
