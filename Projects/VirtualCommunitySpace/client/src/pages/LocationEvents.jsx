@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import Event from '../components/Event'
+import LocationAPI from '../services/LocationAPI'
 import '../css/LocationEvents.css'
 
 const LocationEvents = ({index}) => {
     const [location, setLocation] = useState([])
     const [events, setEvents] = useState([])
+
+    useEffect(() => {
+        const getLocation = async () => {
+            const location = await LocationAPI.getLocationByID(index);
+            setLocation(location)
+        }
+        getLocation();
+    }, []);
 
     return (
         <div className='location-events'>
@@ -19,7 +28,7 @@ const LocationEvents = ({index}) => {
                 </div>
             </header>
 
-            <main>
+            {/* <main>
                 {
                     events && events.length > 0 ? events.map((event, index) =>
                         <Event
@@ -32,7 +41,7 @@ const LocationEvents = ({index}) => {
                         />
                     ) : <h2><i className="fa-regular fa-calendar-xmark fa-shake"></i> {'No events scheduled at this location yet!'}</h2>
                 }
-            </main>
+            </main> */}
         </div>
     )
 }
