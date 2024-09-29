@@ -2,15 +2,13 @@
 
 Submitted by: **Yongye Tan**
 
-About this web app: **Create a virtual community space with an interactive interface that allows users to explore events by location. The user should be able to click on one of at least four locations and view events that have occurred or will occur there.**
+About this web app: **This web creates a virtual community space with an interactive interface that allows users to explore events by location. The user should be able to click on one of at least four locations and view events that have occurred or will occur there.**
 
 Time spent: **2** hours
 
 ## Required Features
 
 The following **required** functionality is completed:
-
-<!-- Make sure to check off completed functionality below -->
 
 - [x] **The web app uses React to display data from the API**
 - [x] **The web app is connected to a PostgreSQL database, with an appropriately structured Events table**
@@ -26,6 +24,8 @@ The following **optional** features are implemented:
 - [ ] `Events` display a countdown showing the time remaining before that event and appears with different formatting when the event has passed
 
 ## Video Walkthrough
+
+https://github.com/user-attachments/assets/594ae772-6af7-4621-8122-51a4d7fde9f1
 
 ## Notes
 
