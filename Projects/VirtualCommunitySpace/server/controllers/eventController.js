@@ -1,13 +1,9 @@
-const getAllEvents = (req, res) => {
+import { pool } from "../config/database.js";
+
+const getAllEvents = async (req, res) => {
     try {
-        res.status(200).json([
-            { name: "The Echo Lounge & Music Hall" },
-            { name: "House of Blues" },
-            {
-                name: "The Pavilion at Toyota Music Factory",
-            },
-            { name: "American airline center" }
-        ])
+        const results = await pool.query('SELECT * FROM events ORDER BY id ASC'); 
+        res.status(200).json(results.rows);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
