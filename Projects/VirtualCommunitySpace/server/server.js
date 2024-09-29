@@ -1,17 +1,13 @@
 import express from 'express'
 import path from 'path'
 import favicon from 'serve-favicon'
-import dotenv from 'dotenv'
+import 'dotenv/config';
 import cors from 'cors';
-import './config/dotenv.js'
 import './config/reset.js'
 
 // import the router from your routes file
 import LocationRouter from './routes/location.js'
 import EventRouter from './routes/event.js';
-
-
-dotenv.config()
 
 const PORT = process.env.PORT || 3000
 
