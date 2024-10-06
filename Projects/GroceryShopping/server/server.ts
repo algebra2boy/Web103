@@ -29,6 +29,22 @@ app.get("/groceries", async (req: Request, res: Response) => {
   }
 });
 
+app.get("/groceries/:id", async (req: Request, res: Response) => {
+  const id = req.params.id;
+  try {
+    const { rows } = await pool.query("SELECT * FROM groceries WHERE id = $1", [
+      id,
+    ]);
+    if (rows.length === 0) {
+      res.status(404).json({ error: "Grocery not found" });
+    } else {
+      res.status(200).json(rows[0]);
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Not able to fetch groceries" });
+  }
+});
+
 app.post("/groceries", async (req: Request, res: Response) => {
   const { name, category, quantity, note, picture } = req.body;
 

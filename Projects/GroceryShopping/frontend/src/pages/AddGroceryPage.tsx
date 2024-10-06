@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const AddGroceryPage = () => {
   const [name, setName] = useState("");
@@ -9,6 +9,8 @@ const AddGroceryPage = () => {
   const [picture, setPicture] = useState("");
 
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
@@ -43,7 +45,6 @@ const AddGroceryPage = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    // Add submit logic here
 
     if (!name || !category || !quantity || !note || !picture) {
       setError("Please fill in all fields before submitting");
@@ -73,7 +74,7 @@ const AddGroceryPage = () => {
       setError("Failed to add grocery item, please try again");
     } else {
       handleClear();
-      redirect("/");
+      navigate("/");
     }
   };
 
