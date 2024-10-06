@@ -26,6 +26,10 @@ The following **required** functionality is completed:
 
 Here's a walkthrough of implemented required features:
 
+
+https://github.com/user-attachments/assets/332d2c9d-2951-4d67-b6f9-ded4522fb7e7
+
+
 ## Notes
 
 It felt great writting express TS server.
