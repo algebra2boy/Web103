@@ -1,27 +1,30 @@
 import { Link, useRoutes } from "react-router-dom";
+import AddGroceryPage from "./pages/AddGroceryPage";
 
 function App() {
-  let element = useRoutes([
-    // {
-    //   path: '/',
-    //   element: <Locations />
-    // },
+  let pageElement = useRoutes([
+    {
+      path: "/add",
+      element: <AddGroceryPage />,
+    },
   ]);
 
   return (
-    <div className="app">
-      <header className="main-header">
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-
-        <div className="header-buttons">
-          <Link to="/" role="button">
-            Home
-          </Link>
+    <>
+      <div className="navbar bg-base-100">
+        <div className="flex-1">
+          <a className="btn btn-ghost text-xl">Grocery Tracker</a>
         </div>
-      </header>
-
-      <main>{element}</main>
-    </div>
+        <div className="flex-none">
+          <ul className="menu menu-horizontal px-1">
+            <li>
+              <a href="/add">Add Grocery</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <main>{pageElement}</main>
+    </>
   );
 }
 
