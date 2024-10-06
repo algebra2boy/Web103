@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { redirect } from "react-router-dom";
 
 const AddGroceryPage = () => {
   const [name, setName] = useState("");
@@ -7,11 +8,15 @@ const AddGroceryPage = () => {
   const [note, setNote] = useState("");
   const [picture, setPicture] = useState("");
 
+  const [error, setError] = useState("");
+
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
   };
 
-  const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCategoryChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
     setCategory(event.target.value);
   };
 
@@ -33,14 +38,24 @@ const AddGroceryPage = () => {
     setQuantity("");
     setNote("");
     setPicture("");
+    setError("");
   };
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     // Add submit logic here
-    
-    const response = await fetch("http://localhost:3000/groceries", {
 
+    if (!name || !category || !quantity || !note || !picture) {
+      setError("Please fill in all fields before submitting");
+      return;
+    }
+
+    if (isNaN(Number(quantity))) {
+      setError("Quantity must be a number");
+      return;
+    }
+
+    const response = await fetch("http://localhost:3000/groceries", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -54,7 +69,12 @@ const AddGroceryPage = () => {
       }),
     });
 
-    
+    if (!response.ok) {
+      setError("Failed to add grocery item, please try again");
+    } else {
+      handleClear();
+      redirect("/");
+    }
   };
 
   return (
@@ -81,12 +101,21 @@ const AddGroceryPage = () => {
           <label className="label">
             <span className="label-text">Category</span>
           </label>
-          <input
-            type="text"
+          <select
             value={category}
             onChange={handleCategoryChange}
-            className="input input-bordered w-full"
-          />
+            className="select select-bordered w-full"
+          >
+            <option value="" disabled>
+              Select category
+            </option>
+            <option value="Fruits">Fruits</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Dairy">Dairy</option>
+            <option value="Meat">Meat</option>
+            <option value="Beverages">Beverages</option>
+            <option value="Snacks">Snacks</option>
+          </select>
         </div>
         <div className="form-control">
           <label className="label">
@@ -121,6 +150,11 @@ const AddGroceryPage = () => {
             className="input input-bordered w-full"
           />
         </div>
+        {error && (
+          <div className="flex justify-center text-xl text-red-500">
+            {error}
+          </div>
+        )}
         <div className="flex justify-between mt-6">
           <button
             type="button"

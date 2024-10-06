@@ -1,8 +1,12 @@
-import { Link, useRoutes } from "react-router-dom";
-import AddGroceryPage from "./pages/AddGroceryPage";
+import { useRoutes } from "react-router-dom";
+import { AddGroceryPage, MainPage } from "./pages";
 
 function App() {
   let pageElement = useRoutes([
+    {
+      path: "/",
+      element: <MainPage />,
+    },
     {
       path: "/add",
       element: <AddGroceryPage />,
@@ -13,7 +17,7 @@ function App() {
     <>
       <div className="navbar bg-base-100">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">Grocery Tracker</a>
+          <a className="btn btn-ghost text-xl" href="/">Grocery Tracker</a>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
