@@ -35,10 +35,26 @@ const AddGroceryPage = () => {
     setPicture("");
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     // Add submit logic here
-    console.log("Form submitted");
+    
+    const response = await fetch("http://localhost:3000/groceries", {
+
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        category,
+        quantity,
+        note,
+        picture,
+      }),
+    });
+
+    
   };
 
   return (
